@@ -1,4 +1,4 @@
-package main
+package parallel
 
 import (
 	"fmt"
@@ -27,8 +27,7 @@ func MultiJudge(value any, judgeFuncs []JudgeFunc) bool {
 	return res != 0
 }
 
-func main() {
-
+func FunctionalParallel() {
 	res := MultiJudge(4, []JudgeFunc{
 		func(a any) bool {
 			fmt.Println("judge 1 called")

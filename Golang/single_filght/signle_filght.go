@@ -2,11 +2,12 @@ package single_filght
 
 import (
 	"fmt"
-	"golang.org/x/sync/singleflight"
 	"math/rand"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"golang.org/x/sync/singleflight"
 )
 
 var count int32

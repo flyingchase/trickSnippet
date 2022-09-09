@@ -1,9 +1,11 @@
 from functools import lru_cache
+from functools import wraps
 
 
 def decorate(func):
     def wrapped():
         print("running wrapped()")
+
     return wrapped
 
 
@@ -37,12 +39,27 @@ def func(n):
     return n
 
 
+def hint(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("{} is running".format(func.__name__))
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+@hint
+def hello():
+    print("hello!")
+
+
 if __name__ == "__main__":
-    target()
-    print("registery ->", registry)
-
-    print()
-
-    print(func(1))
-    print(func(1))
-    print(func(2))
+    # target()
+    # print("registery ->", registry)
+    #
+    # print()
+    #
+    # print(func(1))
+    # print(func(1))
+    # print(func(2))
+    hello()

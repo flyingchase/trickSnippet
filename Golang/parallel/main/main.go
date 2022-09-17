@@ -4,6 +4,6 @@ import "trickSnippet/parallel"
 
 func main() {
 	// parallel.FunctionalParallel()
-	parallel.SyncCondUse()
-
+	// parallel.SyncCondUse()
+	parallel.Multiple_print()
 }
